@@ -5,6 +5,7 @@ Politécnica de Santa Rosa
 Profesor: Jesús Salvador López Ortega
 Archivo: README.md
 Descripción: Documento principal del proyecto. Contiene instrucciones de instalación, uso, estructura y entorno reproducible.
+Última actualización: 2025-10-18
 ============================================================
 -->
 
