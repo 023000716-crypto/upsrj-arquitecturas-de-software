@@ -5,7 +5,7 @@ Politécnica de Santa Rosa
 Materia: Arquitecturas de Software
 Profesor: Jesús Salvador López Ortega
 Grupo: ISW28
-Archivo: create_user.html
+Archivo: create_product.html
 Descripción: Frontend del microservicio.
 ============================================================
 -->
@@ -13,7 +13,7 @@ Descripción: Frontend del microservicio.
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Crear Usuario</title>
+    <title>Crear Producto</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -68,13 +68,14 @@ Descripción: Frontend del microservicio.
 </head>
 <body>
     <div class="container">
-        <h2>Crear Nuevo Usuario</h2>
-        <form action="/users" method="POST">
-            <input type="text" name="name" placeholder="Nombre del usuario" required>
-            <button type="submit">Guardar Usuario</button>
+        <h2>Crear Nuevo Compra</h2>
+        <form action="/purchases" method="POST">
+            <input type="text" name="user_id" placeholder="ID del Usuario" required>
+            <input type="text" name="product_id" placeholder="ID del producto" required>
+            <button type="submit">Guardar Compra</button>
         </form>
         <div class="link">
-            <a href="/users">Ver lista de usuarios</a>
+            <a href="/purchases">Ver lista de compras</a>
         </div>
     </div>
 </body>
