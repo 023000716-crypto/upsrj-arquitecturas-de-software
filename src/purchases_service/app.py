@@ -87,12 +87,12 @@ def get_purchases_by_user(user_id):
     purchases = load_item(PURCHASES_FILE)
     user_purchases = [p for p in purchases if p["user_id"] == user_id]
 
-    if not user_purchases:
-        return "No se encontraron Compras", 404
-
     html = "<h1>Compras</h1>"
-    for p in user_purchases:
-        html += f"<div class='purchase-card'>Compra {p['id']} - Producto {p['product_id']}</div>"
+    if not user_purchases:
+        html += "<p>No se encontraron compras para este usuario</p>"
+    else:
+        for p in user_purchases:
+            html += f"<div class='purchase-card'>Compra {p['id']} - Producto {p['product_id']}</div>"
     return html, 200
 
 # ============================================================
