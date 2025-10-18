@@ -86,7 +86,12 @@ class TestEvaluation(unittest.TestCase):
                 self.fail("El microservicio products_service no está disponible o mal estructurado.")
             self.app = products_app.test_client()
 
-        elif "purchase" in test_name:
+        if "test_get_purchases_by_user" == test_name:
+            if not PURCHASES_AVAILABLE:
+                self.fail("El microservicio purchases_service no está disponible o mal estructurado.")
+            self.app = purchases_app.test_client()
+            self.app.testing = True
+        elif "purchase" in test_name and "test_get_purchases_by_user" != test_name:
             if not PURCHASES_AVAILABLE:
                 self.fail("El microservicio purchases_service no está disponible o mal estructurado.")
             self.app = purchases_app.test_client()
