@@ -54,11 +54,13 @@ def create_purchases():
 
     # Validar existencia de usuario
     if not any(u["id"] == user_id for u in users):
-        return "Usuario no encontrado", 404
+        # Mantener la vista de compras para que el front muestre las compras existentes
+        return render_template("purchases.html", purchases=purchases), 404
 
     # Validar existencia de producto
     if not any(p["id"] == product_id for p in products):
-        return "Producto no encontrado", 404
+        # Mantener la vista de compras para que el front muestre las compras existentes
+        return render_template("purchases.html", purchases=purchases), 404
 
     # Crear compra
     new_purchase = {
